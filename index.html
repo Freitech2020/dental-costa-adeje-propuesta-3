@@ -1234,6 +1234,25 @@
         font-size: 12px;
       }
     }
+
+    @media (max-width: 480px) {
+      .funnel-step-badge {
+        padding: 0 4px;
+      }
+      .funnel-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+      }
+      .funnel-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .step-label {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
