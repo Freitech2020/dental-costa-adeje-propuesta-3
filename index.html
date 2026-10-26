@@ -270,11 +270,12 @@
       color: var(--color-pure-white);
     }
 
-    /* Header Navigation */
+    /* Header Navigation (Fluid Horizontal Desktop - Zero Cramping) */
     header {
       width: 100%;
-      background-color: var(--color-pure-white);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--color-border-subtle);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -284,33 +285,48 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
-      max-width: 1240px;
+      padding: 12px 28px;
+      max-width: 1380px;
       margin: 0 auto;
+      gap: 24px;
+      flex-wrap: nowrap;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      flex-shrink: 0;
+      text-decoration: none;
     }
 
     .brand-logo img {
-      height: 48px;
+      height: 42px;
       width: auto;
+      display: block;
     }
 
-    nav ul {
+    nav {
+      flex-shrink: 0;
+    }
+
+    nav ul.nav-links {
       display: flex;
       list-style: none;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
+      margin: 0;
+      padding: 0;
+      flex-wrap: nowrap;
     }
 
     nav a {
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 15px;
       color: var(--color-trust-navy);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 6px 2px;
+      transition: var(--transition-smooth);
     }
 
     nav a:hover {
@@ -320,133 +336,168 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
     }
 
     .phone-pill-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: var(--color-warm-sand);
+      background-color: #F1F5F9;
       color: var(--color-atlantic-blue);
-      border: 1px solid var(--color-border-subtle);
-      padding: 10px 20px;
+      border: 1px solid #CBD5E1;
+      padding: 9px 18px;
       border-radius: var(--radius-pills);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
       transition: var(--transition-smooth);
     }
 
     .phone-pill-btn:hover {
-      background-color: #EAE3DA;
+      background-color: #E2E8F0;
+      border-color: var(--color-atlantic-blue);
       transform: translateY(-2px);
     }
 
-    /* Hero Section */
+    /* Hero Section (Cinematic Full-Width Photo Hero with White Typography) */
     .hero {
       position: relative;
-      background: linear-gradient(135deg, var(--color-sunlight-ivory) 0%, #F5F1EB 100%);
-      padding: 60px 0 80px;
+      background: 
+        linear-gradient(135deg, rgba(2, 38, 77, 0.91) 0%, rgba(2, 62, 138, 0.83) 50%, rgba(10, 25, 47, 0.93) 100%),
+        url('assets/hero_coastal_warm.webp') center/cover no-repeat;
+      padding: 100px 0 90px;
       overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
+      color: #FFFFFF;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background-color: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: var(--radius-pills);
+      font-size: 14px;
+      font-weight: 600;
+      color: #FFFFFF;
+      backdrop-filter: blur(8px);
+      width: fit-content;
+      margin: 0;
+    }
+
+    .hero h1, #hero-title {
+      color: #FFFFFF;
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      margin: 0;
+    }
+
+    .hero p#hero-description {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 19px;
+      line-height: 1.65;
+      max-width: 780px;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+      margin: 0;
     }
 
     .hero-actions {
       display: flex;
       gap: 16px;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      margin-top: 2rem;
-      margin-bottom: 2.5rem;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .btn-primary {
+      background-color: #0077B6;
+      color: #FFFFFF;
+      border-color: #0077B6;
+      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: #023E8A;
+      border-color: #023E8A;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.22);
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+      transform: translateY(-2px);
     }
 
     .hero-trust-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      width: 100%;
+      max-width: 900px;
     }
 
     .hero-trust-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      color: var(--color-trust-navy);
+      color: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 8px 18px;
+      border-radius: var(--radius-pills);
+      backdrop-filter: blur(8px);
     }
 
     .hero-trust-icon {
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      background-color: rgba(2, 62, 138, 0.08);
-      color: var(--color-atlantic-blue);
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #38BDF8;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
-
-    .hero-image-wrapper {
-      position: relative;
-      border-radius: var(--radius-cards);
-      overflow: hidden;
-      box-shadow: var(--shadow-elevation);
-    }
-
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .hero-image-wrapper:hover img {
-      transform: scale(1.02);
-    }
-
-    .hero-floating-badge {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      right: 24px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      padding: 16px 20px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .hero-floating-badge-text h4 {
-      margin: 0;
-      font-size: 15px;
-      color: var(--color-trust-navy);
-    }
-
-    .hero-floating-badge-text p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--color-slate-muted);
-    }
-
-    /* Brand Badges Bar */
+    
+/* Brand Badges Bar */
     .brand-bar {
       background-color: var(--color-pure-white);
       padding: 32px 0;
@@ -1359,11 +1410,11 @@
   <header>
     <div class="nav-container">
       <a href="#" class="brand-logo" aria-label="Dental Costa Adeje Inicio">
-        <img src="assets/logo_costa_adeje_dental.webp" alt="Costa Adeje Dental Center - Clínica Dental en Tenerife Sur" width="220" height="50">
+        <img src="assets/logo_costa_adeje_dental_dark.webp" alt="Costa Adeje Dental Center - Clínica Dental en Tenerife Sur" width="210" height="48" style="height:42px; width:auto; display:block;">
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="#odontofobia-cero" id="nav-fear">Miedo Cero</a></li>
+          <li><a href="#confort-clinico" id="nav-fear">Confort & Cero Dolor</a></li>
           <li><a href="#transporte-gratuito" id="nav-shuttle">Transporte Gratuito</a></li>
           <li><a href="#equipo-medico" id="nav-team">Equipo Médico</a></li>
           <li><a href="#testimonios" id="nav-reviews">Opiniones</a></li>
@@ -1382,11 +1433,11 @@
   <main>
     <!-- Hero Section (Strict Single H1 per Ley 8) -->
     <section class="hero" id="inicio">
-      <div class="container hero-grid">
+      <div class="container">
         <div class="hero-content">
           <div class="trust-pill">
             <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-            <span id="hero-badge">⭐️ 4.9/5 en Google • Odontología Cálida en Tenerife Sur</span>
+            <span id="hero-badge">★★★★★ 4.9/5 en Google • Odontología de Confianza en Tenerife Sur</span>
           </div>
           
           <h1 id="hero-title">Odontología Cálida, Sin Dolor y de Máxima Confianza en Costa Adeje</h1>
@@ -1433,23 +1484,6 @@
             </div>
           </div>
         </div>
-
-        <div class="hero-image-wrapper">
-          <img src="assets/hero_coastal_warm.webp" alt="Instalaciones cálidas y luminosas de Costa Adeje Dental Center frente al mar" width="800" height="533">
-          <div class="hero-floating-badge">
-            <div class="hero-floating-badge-text">
-              <h4 id="hero-float-dr">Dra. Maryuri de Castro</h4>
-              <p id="hero-float-role">Directora Médica • Invisalign Diamond Provider</p>
-            </div>
-            <div style="color:#F59E0B; display:flex; gap:2px;">
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-estrella"></use></svg>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1467,13 +1501,13 @@
     </section>
 
     <!-- Odontophobia Shield Section (Cuadrícula contra el miedo al dentista) -->
-    <section class="section-padding shield-section" id="odontofobia-cero">
+    <section class="section-padding shield-section" id="confort-clinico">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge" id="shield-badge">Odontofobia Cero & Confort Clínico</span>
-          <h2 id="shield-title">Adiós al Miedo al Dentista: Tratamiento Sin Dolor, Sin Prisas y Con Trato Humano</h2>
+          <span class="section-badge" id="shield-badge">Máximo Confort & Bienestar Clínico</span>
+          <h2 id="shield-title">Tratamiento Sin Dolor y Confort Total: Tu Experiencia Dental en Calma Absoluta</h2>
           <p id="shield-subtitle">
-            Sabemos que visitar al dentista puede generar inquietud. Por eso, hemos diseñado un protocolo bioclimático y médico centrado exclusivamente en tu tranquilidad absoluta y bienestar emocional.
+            En Costa Adeje Dental Center creemos que cuidar de tu boca debe ser una experiencia agradable y relajante. Hemos desarrollado un protocolo de sedación consciente, odontología mínimamente invasiva y atención personalizada para que disfrutes de un bienestar pleno y sin molestias.
           </p>
         </div>
 
@@ -1879,7 +1913,7 @@
         <ul>
           <li><a href="#funnel-cro" id="f-link-implants">Implantes Dentales Straumann</a></li>
           <li><a href="#funnel-cro" id="f-link-ortho">Ortodoncia Invisible Invisalign</a></li>
-          <li><a href="#odontofobia-cero" id="f-link-sedation">Sedación Consciente Cero Dolor</a></li>
+          <li><a href="#confort-clinico" id="f-link-sedation">Sedación Consciente Cero Dolor</a></li>
           <li><a href="#funnel-cro" id="f-link-veneers">Estética Dental y Carillas E-Max</a></li>
           <li><a href="#transporte-gratuito" id="f-link-shuttle">Furgoneta de Transporte Gratuito</a></li>
         </ul>
@@ -1963,7 +1997,7 @@
       ES: {
         schedule: "Lunes a Viernes 08:30 – 19:30",
         shuttleBadge: "Furgoneta Gratuita Pacientes Tenerife Sur",
-        navFear: "Miedo Cero",
+        navFear: "Confort & Cero Dolor",
         navShuttle: "Transporte Gratuito",
         navTeam: "Equipo Médico",
         navReviews: "Opiniones",
@@ -1977,9 +2011,9 @@
         trust2: "Sedación Monitorizada Sin Dolor",
         trust3: "Recogida Gratuita en Hotel",
         trust4: "1ª Visita y Diagnóstico 3D Gratis",
-        shieldBadge: "Odontofobia Cero & Confort Clínico",
-        shieldTitle: "Adiós al Miedo al Dentista: Tratamiento Sin Dolor, Sin Prisas y Con Trato Humano",
-        shieldSubtitle: "Sabemos que visitar al dentista puede generar inquietud. Por eso, hemos diseñado un protocolo bioclimático y médico centrado exclusivamente en tu tranquilidad absoluta y bienestar emocional.",
+        shieldBadge: "Máximo Confort & Bienestar Clínico",
+        shieldTitle: "Tratamiento Sin Dolor y Confort Total: Tu Experiencia en Calma Absoluta",
+        shieldSubtitle: "En Costa Adeje Dental Center creemos que cuidar de tu boca debe ser una experiencia agradable y relajante. Hemos desarrollado un protocolo de sedación consciente, odontología mínimamente invasiva y atención personalizada para que disfrutes de un bienestar pleno y sin molestias.",
         card1Title: "Sedación Consciente Monitorizada",
         card1Desc: "Duerme plácidamente o relájate mientras nuestro equipo médico cualificado cuida de tu sonrisa. No experimentarás ningún dolor, tensión ni recuerdo molesto de la intervención.",
         card2Title: "Anestesia Digital Computerizada",
@@ -2004,7 +2038,7 @@
       EN: {
         schedule: "Monday to Friday 08:30 – 19:30",
         shuttleBadge: "Free Patient Shuttle Tenerife South",
-        navFear: "Zero Fear",
+        navFear: "Comfort & Pain-Free",
         navShuttle: "Free Shuttle",
         navTeam: "Medical Team",
         navReviews: "Reviews",
@@ -2018,9 +2052,9 @@
         trust2: "Painless Monitored Sedation",
         trust3: "Free Hotel Pickup Service",
         trust4: "Free 1st Visit & 3D Scan",
-        shieldBadge: "Zero Dental Phobia & Clinical Comfort",
-        shieldTitle: "Say Goodbye to Dental Fear: Pain-Free, Gentle & Humane Care",
-        shieldSubtitle: "We understand that dental visits can cause stress. That is why our bioclimatic clinic and caring team prioritize your peace of mind and comfort above all.",
+        shieldBadge: "Maximum Comfort & Clinical Wellbeing",
+        shieldTitle: "Pain-Free Treatment & Total Comfort: Gentle Care Designed for You",
+        shieldSubtitle: "At Costa Adeje Dental Center, dental care is a relaxed, gentle experience. We prioritize your comfort with pain-free sedation and attentive personal care.",
         card1Title: "Monitored Conscious Sedation",
         card1Desc: "Sleep peacefully or relax while our medical specialists treat your smile. You will feel zero pain, tension, or unpleasant memories.",
         card2Title: "Computerized Painless Anesthesia",
@@ -2059,8 +2093,8 @@
         trust2: "Schmerzfreier Dämmerschlaf",
         trust3: "Kostenlose Hotelabholung",
         trust4: "Gratis 1. Beratung & 3D-Scan",
-        shieldBadge: "Keine Zahnarztangst & Maximaler Komfort",
-        shieldTitle: "Schluss mit der Zahnarztangst: Schmerzfreie, Menschliche Behandlung",
+        shieldBadge: "Maximaler Komfort & Wohlbefinden",
+        shieldTitle: "Schmerzfreie Behandlung & Vollkommener Komfort: Ihre Zahngesundheit in Ruhe",
         shieldSubtitle: "Wir wissen, dass ein Zahnarztbesuch Überwindung kosten kann. Unser bioklimatisches Konzept und erfahrenes Team schaffen eine ruhige, entspannte Wohlfühlatmosphäre.",
         card1Title: "Überwachte Dämmerschlafnarkose",
         card1Desc: "Schlafen Sie friedlich ein, während unsere Fachärzte Ihre Zähne versorgen. Sie spüren keinerlei Schmerzen und haben keine unangenehmen Erinnerungen.",
@@ -2086,7 +2120,7 @@
       IT: {
         schedule: "Lunedì a Venerdì 08:30 – 19:30",
         shuttleBadge: "Navetta Gratuita Pazienti Tenerife Sud",
-        navFear: "Zero Paura",
+        navFear: "Comfort & Senza Dolore",
         navShuttle: "Navetta Gratis",
         navTeam: "Equipe Medica",
         navReviews: "Recensioni",
@@ -2100,8 +2134,8 @@
         trust2: "Sedazione Cosciente Senza Dolore",
         trust3: "Prelievo Gratuito in Hotel",
         trust4: "1ª Visita e Diagnosi 3D Gratis",
-        shieldBadge: "Zero Odontofobia & Comfort Clinico",
-        shieldTitle: "Addio alla Paura del Dentista: Cure Dolci, Senza Fretta e Umane",
+        shieldBadge: "Massimo Comfort & Benessere Clinico",
+        shieldTitle: "Trattamenti Senza Dolore e Comfort Totale: La Tua Esperienza in Piena Serenità",
         shieldSubtitle: "Capiamo che andare dal dentista possa creare ansia. La nostra clinica adotta protocolli dolci per garantirti il massimo relax e benessere.",
         card1Title: "Sedazione Cosciente Monitorata",
         card1Desc: "Rilassati completamente mentre la nostra equipe si prende cura del tuo sorriso. Nessun dolore e nessun ricordo sgradevole.",
